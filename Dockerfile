@@ -6,6 +6,7 @@ RUN set -x \
 	&& apt-get update && apt-get install -y ca-certificates curl \
 		--no-install-recommends \
 	&& apt-get install -y gpg \
+	&& apt-get install procps \
 	&& curl -fSL "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini" -o /usr/local/bin/tini \
 	&& curl -fSL "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini.asc" -o /usr/local/bin/tini.asc \
 	&& export GNUPGHOME="$(mktemp -d)" \
