@@ -2,7 +2,6 @@ FROM node:12-slim
 
 # grab tini for signal processing and zombie killing
 ENV TINI_VERSION 0.9.0
-RUN mkdir ~/.gnupg
 RUN echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf
 RUN set -x \
 	&& apt-get update && apt-get install -y ca-certificates curl \
